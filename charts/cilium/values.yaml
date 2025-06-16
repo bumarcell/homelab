@@ -1,0 +1,17 @@
+cilium:
+  kubeProxyReplacement: true
+  k8sServiceHost: kind-control-plane
+  k8sServicePort: 6443
+  operator:
+    replicas: 1
+  l2announcements:
+    enabled: true
+  hubble:
+    enabled: true
+    ui:
+      enabled: true
+      service:
+        type: LoadBalancer
+    relay:
+      enabled: true
+
