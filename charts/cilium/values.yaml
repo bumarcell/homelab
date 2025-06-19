@@ -12,6 +12,7 @@ cilium:
       enabled: true
       service:
         type: LoadBalancer
+        port: 8080
     relay:
       enabled: true
 
