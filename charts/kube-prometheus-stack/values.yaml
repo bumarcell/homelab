@@ -1,0 +1,9 @@
+kube-prometheus-stack:
+  prometheus:
+    service:
+      type: LoadBalancer
+      port: 80
+  grafana:
+    service:
+      type: LoadBalancer
+

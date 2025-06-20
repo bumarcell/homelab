@@ -1,0 +1,18 @@
+pihole:
+  replicaCount: 2
+  hostNetwork: true
+  persistentVolumeClaim:
+    enabled: false
+  
+  serviceWeb:
+    loadBalancerIP: 172.18.222.54
+    type: LoadBalancer
+  
+  serviceDns:
+    mixedService: true
+    loadBalancerIP: 172.18.222.53
+    type: LoadBalancer
+    port: 53
+
+  serviceDhcp:
+    enabled: false
