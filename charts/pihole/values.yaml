@@ -1,17 +1,22 @@
 pihole:
-  replicaCount: 2
+  image:
+    tag: 2025.06.2
+  strategyType: Recreate
+  replicaCount: 1
   hostNetwork: true
   persistentVolumeClaim:
-    enabled: false
+    enabled: true
   
   serviceWeb:
     loadBalancerIP: 172.18.222.54
     type: LoadBalancer
+    externalTrafficPolicy: Cluster
   
   serviceDns:
     mixedService: true
     loadBalancerIP: 172.18.222.53
     type: LoadBalancer
+    externalTrafficPolicy: Cluster
     port: 53
 
   serviceDhcp:

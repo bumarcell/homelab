@@ -2,8 +2,17 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
   - role: control-plane
+    extraounts:
+      - hostPath: /kind-storage
+        containerPath: /var/local-path-provisioner
   - role: worker
+    extraounts:
+      - hostPath: /kind-storage
+        containerPath: /var/local-path-provisioner
   - role: worker
+    extraounts:
+      - hostPath: /kind-storage
+        containerPath: /var/local-path-provisioner
 networking:
   disableDefaultCNI: true
   kubeProxyMode: none
